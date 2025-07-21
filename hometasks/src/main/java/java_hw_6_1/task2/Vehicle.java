@@ -1,4 +1,4 @@
-package java_hw_6.task2;
+package java_hw_6_1.task2;
 
 public class Vehicle {
 

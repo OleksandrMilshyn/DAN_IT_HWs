@@ -1,4 +1,4 @@
-package java_hw_6.task1;
+package java_hw_6_1.task1;
 
 public class Main {
 

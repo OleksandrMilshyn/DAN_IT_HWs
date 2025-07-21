@@ -1,4 +1,4 @@
-package java_hw_6.task3;
+package java_hw_6_1.task3;
 
 public class Media {
 
