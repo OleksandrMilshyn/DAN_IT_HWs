@@ -7,15 +7,15 @@ public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[] array = new int[10]; //создаю массив
+        int[] array = new int[10]; //create the array
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * 100); // заполняю массив рандомными числами
+            array[i] = (int) (Math.random() * 100); // fill the array with random numbers
         }
         System.out.println("Please enter an integer");
-        int number = scanner.nextInt(); // пользователь вводит число
-        boolean found = false; // использую тернарный оператор
+        int number = scanner.nextInt(); // a user enter a number
+        boolean found = false; // using the ternary operator
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == number) { // проверяю соответствует ли введённое число каждому из элементов массива
+            if (array[i] == number) { // I check if the entered number corresponds to each of the array elements
                 found = true;
                 break;
             }
