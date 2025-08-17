@@ -9,12 +9,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static java.lang.String.format;
 import static java.lang.Thread.sleep;
 
-public class Main5 {
+public class Main6 {
 
     public static void main(String[] args) throws InterruptedException {
+
         WebDriver driver = new ChromeDriver();
 
         try {
+            String wordToFind = "0";
             driver.get("https://hotline.ua/");
             driver.manage().window().maximize();
 
@@ -38,11 +40,31 @@ public class Main5 {
             toLikeProduct.click();
             sleep(3000);
 
-            WebElement isAdd = driver.findElement(By.cssSelector("[class='modal modal--center']"));
+            WebElement closeButton = driver.findElement(By.cssSelector("[class='modal__close-icon btn-close']"));
+            closeButton.click();
+            sleep(3000);
 
-            Assert.assertTrue(isAdd.isDisplayed());
+            WebElement checkLikes = driver.findElement(By.cssSelector("[class='popover my-lists']"));
+            checkLikes.click();
+            sleep(3000);
 
+            WebElement openCheckLikes = driver.findElement(By.cssSelector("[class='profile-sidebar__section-child-container']"));
+            openCheckLikes.click();
+            sleep(3000);
 
+            WebElement putATick = driver.findElement(By.cssSelector("[class='checkbox__checkmark']"));
+            putATick.click();
+            sleep(3000);
+
+            WebElement clickDelete = driver.findElement(By.cssSelector("[class='button-with-icon buttons__item buttons__item--trash']"));
+            clickDelete.click();
+            sleep(3000);
+
+            WebElement isEmpty = driver.findElement(By.cssSelector("[class='profile-page-title']"));
+            String isZero = isEmpty.getText();
+            sleep(3000);
+
+            Assert.assertTrue(format("<%s> title doesn't contain <%s> word", isZero, wordToFind), isZero.contains(wordToFind));
 
         } catch (AssertionError ex) {
             ex.printStackTrace();
