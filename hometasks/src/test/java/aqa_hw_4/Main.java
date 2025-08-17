@@ -29,9 +29,9 @@ public class Main {
             sleep(3000);
 
             WebElement isKharkivLocation = driver.findElement(By.xpath("//div[@title='Харків']"));
-            String pageTitleString = isKharkivLocation.getText();
+            String locationText = isKharkivLocation.getText();
 
-            Assert.assertTrue(format("<%s> title doesn't contain <%s> word", pageTitleString, wordToFind), pageTitleString.contains(wordToFind));
+            Assert.assertTrue(format("<%s> title doesn't contain <%s> word", locationText, wordToFind), locationText.contains(wordToFind));
 
         } catch (AssertionError ex) {
         ex.printStackTrace();
