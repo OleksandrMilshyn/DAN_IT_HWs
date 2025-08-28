@@ -11,9 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 public class Main3 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int items = 48;
 
         WebDriver driver = new ChromeDriver();
@@ -32,8 +34,8 @@ public class Main3 {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[src='/img/uploads/clients/5e681eea33a67.jpg']")));
         WebElement washingMachines = driver.findElement(By.cssSelector("[src='/img/uploads/clients/5e681eea33a67.jpg']"));
         washingMachines.click();
+        sleep(10000); // use this method to load all elements
 
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.list-item")));
         List<WebElement> itemsOnPage = driver.findElements(By.cssSelector("div.list-item"));
         Assert.assertEquals(itemsOnPage.size(), items);
 
