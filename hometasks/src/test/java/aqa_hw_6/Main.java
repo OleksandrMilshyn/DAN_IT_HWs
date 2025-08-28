@@ -1,4 +1,4 @@
-package aqa_hw_5;
+package aqa_hw_6;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
