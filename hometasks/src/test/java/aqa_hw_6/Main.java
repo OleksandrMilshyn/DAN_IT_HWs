@@ -19,23 +19,31 @@ public class Main {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         try {
-            String wordToFind = "Samsung";
+            String wordForFind = "Samsung";
+            String expectedNumber = "1";
 
             driver.get("https://hotline.ua/");
             driver.manage().window().maximize();
 
             WebElement searchButtonToFind = driver.findElement(By.cssSelector("[type='text']"));
-            searchButtonToFind.sendKeys(wordToFind);
+            searchButtonToFind.sendKeys(wordForFind);
 
             WebElement searchButton = driver.findElement(By.cssSelector("button.search__btn"));
             searchButton.click();
 
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.search__title")));
-            WebElement searchNewFindElement = driver.findElement(By.cssSelector("div.search__title"));
-            String samsungText = searchNewFindElement.getText();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.list-item")));
+            WebElement phoneItems = driver.findElement(By.cssSelector("div.list-item"));
+            phoneItems.click();
 
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.action__wrapper")));
+            WebElement likeButton = driver.findElement(By.cssSelector("div.action__wrapper"));
+            likeButton.click();
 
-            Assert.assertTrue(format("<%s> title doesn't contain <%s> word", samsungText, wordToFind), samsungText.contains(wordToFind));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.action__title")));
+            WebElement isLikeChecking = driver.findElement(By.cssSelector("div.action__title"));
+            String actualNumber = isLikeChecking.getText();
+
+            Assert.assertTrue(format("<%s> title doesn't contain <%s> number", actualNumber, expectedNumber), actualNumber.contains(expectedNumber));
 
         } catch (AssertionError ex) {
             ex.printStackTrace();

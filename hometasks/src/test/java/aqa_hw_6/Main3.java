@@ -16,7 +16,7 @@ import static java.lang.Thread.sleep;
 public class Main3 {
 
     public static void main(String[] args) throws InterruptedException {
-        int items = 48;
+        int expectedCountOfItemsOnPage = 48;
 
         WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -31,13 +31,13 @@ public class Main3 {
         WebElement householdAppliances = driver.findElement(By.cssSelector("[data-id='548']"));
         householdAppliances.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[src='/img/uploads/clients/5e681eea33a67.jpg']")));
-        WebElement washingMachines = driver.findElement(By.cssSelector("[src='/img/uploads/clients/5e681eea33a67.jpg']"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.section-navigation__item")));
+        WebElement washingMachines = driver.findElement(By.cssSelector("div.section-navigation__item"));
         washingMachines.click();
-        sleep(10000); // use this method to load all elements
 
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("div.list-item"),48));
         List<WebElement> itemsOnPage = driver.findElements(By.cssSelector("div.list-item"));
-        Assert.assertEquals(itemsOnPage.size(), items);
+        Assert.assertEquals(itemsOnPage.size(), expectedCountOfItemsOnPage);
 
         driver.quit();
     }

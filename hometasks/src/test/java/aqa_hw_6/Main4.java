@@ -25,8 +25,6 @@ public class Main4 {
             driver.get("https://hotline.ua/");
             driver.manage().window().maximize();
 
-
-
             WebElement buttonOfComparison = driver.findElement(By.cssSelector("div.full-width"));
             buttonOfComparison.click();
 
