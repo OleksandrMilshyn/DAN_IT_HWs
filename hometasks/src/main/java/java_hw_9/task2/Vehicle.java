@@ -4,16 +4,12 @@ public class Vehicle {
 
     private static Vehicle instance;
 
-//    private Vehicle(){
-//        }
-//    public static Vehicle getInstance(){
-//        if instance == null{
-//            instance = new Vehicle();
-//        }
-//        return instance;
-//    }
-//    public String name;
-//    public int speed;
-//    public int price;
-
+    private Vehicle(){
+        }
+    public static Vehicle getInstance(){
+        if (instance == null){
+            instance = new Vehicle();
+        }
+        return instance;
+    }
 }
