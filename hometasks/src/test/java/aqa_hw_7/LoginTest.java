@@ -19,22 +19,17 @@ public class LoginTest {
         driver.manage().window().maximize();
         driver.get("https://hotline.ua/");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 
         try {
-            String incorrectLogin = "fuu";
-
             WebElement userButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user-info")));
             userButton.click();
 
-            WebElement loginField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='text']")));
-            loginField.sendKeys(incorrectLogin);
+            WebElement imgHotLine = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[src='/frontend/_nuxt/img/logo-smart-shopping.b026975.svg']")));
+            imgHotLine.click();
 
-            WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
-            submitButton.click();
-
-            WebElement error = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.error")));
-            Assert.assertTrue("The Error is not appear", error.isDisplayed());
+            String currentUrl = driver.getCurrentUrl();
+            Assert.assertEquals("Is not a home page", "https://hotline.ua/", currentUrl);
         }
         finally {
             driver.quit();
