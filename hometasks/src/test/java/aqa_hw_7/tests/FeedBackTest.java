@@ -1,10 +1,13 @@
-package aqa_hw_7.Tests;
+package aqa_hw_7.tests;
 
+import aqa_hw_7.listeners.Listener;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(Listener.class)
 public class FeedBackTest extends BaseTest{
 
     @Test

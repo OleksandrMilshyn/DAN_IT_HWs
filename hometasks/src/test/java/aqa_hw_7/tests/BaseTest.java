@@ -1,4 +1,4 @@
-package aqa_hw_7.Tests;
+package aqa_hw_7.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
