@@ -1,11 +1,11 @@
-package aqa_hw_7;
+package aqa_hw_7.Tests;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class HomePageTest extends BaseTest {
+public class HomePageTest extends BaseTest{
 
     @Test
     public void verifyLoginField() {
