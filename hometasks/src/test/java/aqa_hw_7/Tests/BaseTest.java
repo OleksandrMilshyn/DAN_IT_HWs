@@ -16,7 +16,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://hotline.ua/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
 
     @AfterMethod
@@ -25,6 +25,6 @@ public class BaseTest {
     }
 
     public WebDriver getDriver() {
-        return driver;
+        return this.driver;
     }
 }

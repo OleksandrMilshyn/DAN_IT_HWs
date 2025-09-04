@@ -7,9 +7,18 @@ public class ProviderData {
     @DataProvider
     public Object [][] getSearchData() {
         return new Object[][]{
-                {"Xiaomi", "Xiaomi Mobile"},
+                {"Xiaomi", "Смартфони та мобільні телефони Xiaomi"},
                 {"Adidas", "Кросівки Adidas"},
                 {"Bosch", "Пральні машини Bosch"}
+        };
+    }
+
+    @DataProvider
+    public Object [][] getIncorrectSearching() {
+        return new Object[][]{
+                {".", "."},
+                {",", ","},
+                {"!", "!"}
         };
     }
 }

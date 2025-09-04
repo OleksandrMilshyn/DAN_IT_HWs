@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class HomePageTest extends BaseTest{
 
     @Test
-    public void verifyLoginField() {
+    public void verifyHomePage() {
 
         WebElement userButton = getDriver().findElement(By.cssSelector("div.user-info"));
         userButton.click();
