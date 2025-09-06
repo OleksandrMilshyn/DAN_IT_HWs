@@ -12,6 +12,7 @@ public class SearchResultPageVerificationTest extends BaseTest{
 
         String wordToFind = "Samsung";
         int expectedCountOfProducts = 81;
+
         HomePage homePage = new HomePage(getDriver());
         homePage.fieldForWordToSearch(wordToFind);
         sleep(3000);
