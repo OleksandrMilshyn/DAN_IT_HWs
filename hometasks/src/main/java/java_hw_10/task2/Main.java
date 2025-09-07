@@ -7,15 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LocalDateTime localDateTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime localDateTime = LocalDateTime.of(2023, 10, 25, 14, 30);
 
-        LocalDateTime resultOfFormatter = calculateFutureDateTime(localDateTime, 5, 10);
-        System.out.println(resultOfFormatter.format(formatter));
+        LocalDateTime resultOfAddMinus = calculateFutureDateTime(localDateTime, 3, 5);
+        System.out.println(resultOfAddMinus);
     }
 
     public static LocalDateTime calculateFutureDateTime(LocalDateTime dateTime, int days, int hours){
-        dateTime = dateTime.plusDays(days).plusHours(hours);
-        return dateTime;
-    }
+        return dateTime.plusDays(days).plusHours(hours);
+        }
 }
