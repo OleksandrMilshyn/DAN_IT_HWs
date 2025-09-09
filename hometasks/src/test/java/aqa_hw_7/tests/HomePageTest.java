@@ -19,7 +19,7 @@ public class HomePageTest extends BaseTest{
         WebElement registrationButton = getDriver().findElement(By.cssSelector("[class='template-page__link']"));
         registrationButton.click();
 
-        WebElement imgHotLine = getDriver().findElement(By.cssSelector("[src='/frontend/_nuxt/img/logo-smart-shopping.b026975.svg']"));
+        WebElement imgHotLine = getDriver().findElement(By.cssSelector("a.template-page__logo img"));
         imgHotLine.click();
 
         String currentUrl = getDriver().getCurrentUrl();
