@@ -11,10 +11,6 @@ public class ReviewPage {
         waitForSeconds();
     }
 
-    public String getFieldContent(String cssSelector){
-        return $(cssSelector).getText();
-    }
-
     private void waitForSeconds() {
         try {
             sleep(5000);
