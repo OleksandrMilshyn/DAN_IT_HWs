@@ -10,10 +10,10 @@ public class LoginVerificationTest extends BaseTest{
 
         String wordToVerify = "Зміна паролю";
 
-        HomePage homePage = new HomePage(getDriver());
+        HomePage homePage = new HomePage();
         homePage.toUserPage();
 
-        LoginPage loginPage = new LoginPage(getDriver());
+        LoginPage loginPage = new LoginPage();
 
         loginPage.toForgetPassword();
 

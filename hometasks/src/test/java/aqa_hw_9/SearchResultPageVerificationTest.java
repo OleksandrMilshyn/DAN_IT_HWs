@@ -3,23 +3,20 @@ package aqa_hw_9;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static java.lang.Thread.sleep;
-
 public class SearchResultPageVerificationTest extends BaseTest{
 
     @Test
-    public void verifyProductPage() throws InterruptedException {
+    public void verifyProductPage() {
 
         String wordToFind = "Samsung";
         int expectedCountOfProducts = 81;
 
-        HomePage homePage = new HomePage(getDriver());
-        homePage.fieldForWordToSearch(wordToFind);
-        sleep(3000);
+        HomePage homePage = new HomePage();
+        homePage.enterTextIntoSearchField(wordToFind);
 
-        homePage.clickToButtonToSearch();
+        homePage.clickOnButtonToSearch();
 
-        SearchResultPage searchResultPage = new SearchResultPage(getDriver());
+        SearchResultPage searchResultPage = new SearchResultPage();
         int actualCountOfProducts = searchResultPage.countOfProducts();
 
         Assert.assertEquals(actualCountOfProducts, expectedCountOfProducts);

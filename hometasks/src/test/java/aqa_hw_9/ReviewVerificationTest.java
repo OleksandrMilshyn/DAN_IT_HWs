@@ -13,10 +13,10 @@ public class ReviewVerificationTest extends BaseTest{
         String expectedReviewField1 = "Відгуки покупців";
         String expectedReviewField2 = "Відгуки про інтернет-магазини";
 
-        HomePage homePage = new HomePage(getDriver());
+        HomePage homePage = new HomePage();
         homePage.toReviewPage();
 
-        ReviewPage reviewPage = new ReviewPage(getDriver());
+        ReviewPage reviewPage = new ReviewPage();
 
         String actualReviewField1 = reviewPage.getFieldContent("[class='reviews__title m_b-15']");
         Assert.assertEquals(actualReviewField1, expectedReviewField1);
