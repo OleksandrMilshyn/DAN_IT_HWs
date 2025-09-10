@@ -1,5 +1,6 @@
 package aqa_hw_9;
 
+import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -11,9 +12,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void initDriver(){
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://hotline.ua/");
+        Selenide.open("https://hotline.ua/");
     }
 
     @AfterMethod
