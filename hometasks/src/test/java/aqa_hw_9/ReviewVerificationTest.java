@@ -3,12 +3,10 @@ package aqa_hw_9;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static java.lang.Thread.sleep;
-
 public class ReviewVerificationTest extends BaseTest{
 
     @Test
-    public void verifySearchReview() throws InterruptedException {
+    public void verifySearchReview(){
 
         String expectedReviewField1 = "Відгуки покупців";
         String expectedReviewField2 = "Відгуки про інтернет-магазини";
@@ -22,7 +20,6 @@ public class ReviewVerificationTest extends BaseTest{
         Assert.assertEquals(actualReviewField1, expectedReviewField1);
 
         reviewPage.toReviewOfStories();
-        sleep(4000);
 
         String actualReviewField2 = reviewPage.getFieldContent("h1.reviews__title");
         Assert.assertEquals(actualReviewField2, expectedReviewField2);

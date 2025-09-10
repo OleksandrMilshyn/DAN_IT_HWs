@@ -12,6 +12,7 @@ public class HomePage {
 
     public void clickOnButtonToSearch(){
         $("button.search__btn").click();
+        waitForSeconds();
     }
 
     public void toUserPage(){
@@ -24,7 +25,7 @@ public class HomePage {
 
     private void waitForSeconds() {
         try {
-            sleep(3000);
+            sleep(9000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
