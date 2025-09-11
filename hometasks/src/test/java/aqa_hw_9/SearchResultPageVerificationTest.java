@@ -1,6 +1,5 @@
 package aqa_hw_9;
 
-import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
