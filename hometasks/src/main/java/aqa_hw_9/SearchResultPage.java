@@ -1,0 +1,14 @@
+package aqa_hw_9;
+
+import com.codeborne.selenide.ElementsCollection;
+
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
+import static com.codeborne.selenide.Selenide.$$;
+
+public class SearchResultPage {
+
+    public int countOfProducts(){
+        ElementsCollection listOfAllProducts = $$("div.list-item").shouldHave(sizeGreaterThanOrEqual(81));
+        return listOfAllProducts.size();
+    }
+}
