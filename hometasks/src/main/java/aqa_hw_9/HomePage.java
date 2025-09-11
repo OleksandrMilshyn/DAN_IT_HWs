@@ -1,5 +1,7 @@
 package aqa_hw_9;
 
+import com.codeborne.selenide.Selenide;
+
 import static com.codeborne.selenide.Selenide.$;
 import static java.lang.Thread.sleep;
 
@@ -12,7 +14,8 @@ public class HomePage {
 
     public void clickOnButtonToSearch(){
         $("button.search__btn").click();
-        waitForSeconds();
+        Selenide.sleep(5000);
+
     }
 
     public void toUserPage(){

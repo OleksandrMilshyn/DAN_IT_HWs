@@ -1,21 +1,14 @@
 package aqa_hw_9;
 
+import com.codeborne.selenide.Selenide;
+
 import static com.codeborne.selenide.Selenide.$;
-import static java.lang.Thread.sleep;
 
 public class ReviewPage {
 
     public void toReviewOfStories(){
 
         $("[class='tabs-item flex center-xs middle-xs']").click();
-        waitForSeconds();
-    }
-
-    private void waitForSeconds() {
-        try {
-            sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        Selenide.sleep(3000);
     }
 }
