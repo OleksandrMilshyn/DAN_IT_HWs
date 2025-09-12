@@ -9,4 +9,6 @@ public class MoviePage {
     public void addToFavoritesButton() {$("[data-id='1']").click();}
 
     public String favoritesTitle() {return $("#dlepopup").getText();}
+
+    public String checkTVTitle() {return $("[href='https://uaserials.my/channel/Netflix/']").getText();}
 }
