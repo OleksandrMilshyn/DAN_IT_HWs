@@ -15,8 +15,8 @@ public class VerifySearchResultTest extends BaseTest{
         homePage.searchButton();
         homePage.filmIcon();
 
-        FilmPage filmPage = new FilmPage();
-        String actualResult = filmPage.filmTitle();
+        MoviePage moviePage = new MoviePage();
+        String actualResult = moviePage.filmTitle();
 
         Assert.assertTrue(actualResult.contains(wordToFind));
     }
