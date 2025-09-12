@@ -10,4 +10,5 @@ public class HomePage {
 
     public void filmIcon() {$("div.short-mask").click();}
 
+    public void toFilterPage(){$("[href='/cartoons/']").click();}
 }
