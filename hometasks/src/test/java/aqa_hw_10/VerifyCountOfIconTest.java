@@ -1,12 +1,15 @@
 package aqa_hw_10;
 
-import com.codeborne.selenide.ElementsCollection;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class VerifyCountOfIconTest extends BaseTest{
 
     @Test
+    @Description("This test verify count of icon on Filter Page")
+    @Epic("Comparing")
     public void verifyCountOfFilm(){
         int expectedResult = 18;
 
