@@ -1,6 +1,6 @@
 package aqa_hw_11;
 
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class VerifyMainButtonTest extends BaseTest{
