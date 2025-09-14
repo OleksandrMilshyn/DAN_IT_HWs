@@ -7,6 +7,8 @@ public class VerifyCountOfCollectionsTest extends BaseTest{
 
     @Test
     public void verifyCountOfCollections() {
+        testCaseId = 1;
+        System.out.println("First test execution");
 
         int expectedCount = 51;
 

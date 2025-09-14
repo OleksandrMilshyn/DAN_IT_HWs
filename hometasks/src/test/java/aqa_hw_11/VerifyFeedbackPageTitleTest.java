@@ -7,6 +7,8 @@ public class VerifyFeedbackPageTitleTest extends BaseTest{
 
     @Test
     public void verifyFeedbackPageTitle() {
+        testCaseId = 2;
+        System.out.println("Second test execution");
 
         String expectedTitle = "Зворотній зв′язок";
 

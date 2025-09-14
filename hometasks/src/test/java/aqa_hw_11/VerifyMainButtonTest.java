@@ -7,6 +7,8 @@ public class VerifyMainButtonTest extends BaseTest{
 
     @Test
     public void verifyMainButton(){
+        testCaseId = 3;
+        System.out.println("Third test execution");
 
         String expectedURL = "https://uaserials.my/";
 
