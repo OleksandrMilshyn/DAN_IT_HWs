@@ -2,6 +2,7 @@ package aqa_hw_12.stet_definitions;
 
 import aqa_hw_12.HomePage;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 
 public class HomePageStepDefinitions {
 
@@ -10,5 +11,15 @@ public class HomePageStepDefinitions {
     @Given("User opens Home Page")
     public void openHomePage() {
         homePage.openHomePage();
+    }
+
+    @When("User enters {string} word into search field")
+    public void entersSearchWord(String wordToSearch){
+        homePage.enterSearchWord(wordToSearch);
+    }
+
+    @When("User click on search button")
+    public void clickSearchButton() {
+        homePage.enterSearchButton();
     }
 }
