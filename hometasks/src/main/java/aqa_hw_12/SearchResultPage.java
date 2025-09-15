@@ -1,9 +1,9 @@
 package aqa_hw_12;
 
 import com.codeborne.selenide.ElementsCollection;
-
 import java.time.Duration;
 
+import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -31,7 +31,8 @@ public class SearchResultPage {
         productPicturesElements.get(productIndex - 1).click();
     }
 
-    public int countOfPopularProducts() {return $$("div.list-item__photo").size();}
+    public int countOfPopularProducts(int expectedCount) {
+        return $$("div.list-item__photo").shouldHave(size(expectedCount)).size();}
 
     public boolean popularProductsItems() {return $("div.block-popular").shouldBe(visible).isDisplayed();}
 

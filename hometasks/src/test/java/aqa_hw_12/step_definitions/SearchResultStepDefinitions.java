@@ -35,9 +35,9 @@ public class SearchResultStepDefinitions extends BaseStepDefinition{
         Assert.assertTrue(actualTitle.contains(wordToVerify));
     }
 
-    @Then("The user sees {int} popular products on Search Result Page")
+    @Then("User sees {int} popular products on Search Result Page")
     public void verifyCountOfPopularProducts(int numberOfProducts) {
-        int actualNumberOfProducts = searchResultPage.countOfPopularProducts();
+        int actualNumberOfProducts = searchResultPage.countOfPopularProducts(numberOfProducts);
         Assert.assertEquals(actualNumberOfProducts, numberOfProducts);
     }
 

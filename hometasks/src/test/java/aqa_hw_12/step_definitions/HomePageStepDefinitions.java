@@ -33,16 +33,8 @@ public class HomePageStepDefinitions {
     @When("The user clicks the TV, audio section in the catalog on Home Page")
     public void clickOnTvAudioSection() {homePage.clickOnTvAudioButton();}
 
-    @When("The user clicks on hotline finance section in the catalog on Home Page")
-    public void clickOnHotlineFinanceSection() {homePage.clickOnHotlineFinanceButton();}
-
     @Then("Verify main catalog menu appears on Home Page")
     public void verifyMainCatalogMenuIsDisplayed() {
         Assert.assertTrue(homePage.verifyMainCatalogButtonIsDisplayed());
-    }
-
-    @Then("Verify separate {string} window opens")
-    public void verifyUrlHotlineFinancePage(String url) {
-        Assert.assertTrue(homePage.getCurrentUrl().contains(url));
     }
 }

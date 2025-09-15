@@ -17,4 +17,4 @@ Feature: Catalog Menu functionality verification
     When User clicks on main catalog button on Home Page
     And The user clicks the TV, audio section in the catalog on Home Page
     And Use click on Show more button on Search Result Page
-    Then The user sees 30 popular products on Search Result Page
+    Then User sees 30 popular products on Search Result Page
