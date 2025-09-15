@@ -1,7 +1,6 @@
-package aqa_hw_12.stet_definitions;
+package aqa_hw_12.step_definitions;
 
 import aqa_hw_12.HomePage;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,7 +8,7 @@ import org.junit.Assert;
 
 public class HomePageStepDefinitions {
 
-    HomePage homePage = new HomePage();
+    public HomePage homePage = new HomePage();
 
     @Given("User opens Home Page")
     public void openHomePage() {
@@ -21,7 +20,7 @@ public class HomePageStepDefinitions {
         homePage.enterSearchWord(wordToSearch);
     }
 
-    @And("User click on search button on Home Page")
+    @When("User click on search button on Home Page")
     public void clickSearchButton() {
         homePage.enterSearchButton();
     }
