@@ -20,6 +20,9 @@ public class SearchResultStepDefinitions extends BaseStepDefinition{
         searchResultPage.clickOnProductPicture(productIndex);
     }
 
+    @When("Use click on Show more button on Search Result Page")
+    public void clickOnShowMoreButton() {searchResultPage.clickOnShowMoreButton();}
+
     @Then("Title contains {string} search word on Search Result Page")
     public void verifyTitle(String wordToVerify) {
         String actualTitle = searchResultPage.getTitle();
@@ -32,4 +35,14 @@ public class SearchResultStepDefinitions extends BaseStepDefinition{
         Assert.assertTrue(actualTitle.contains(wordToVerify));
     }
 
+    @Then("The user sees {int} popular products on Search Result Page")
+    public void verifyCountOfPopularProducts(int numberOfProducts) {
+        int actualNumberOfProducts = searchResultPage.countOfPopularProducts();
+        Assert.assertEquals(actualNumberOfProducts, numberOfProducts);
+    }
+
+    @Then("Verify that popular products appears on Search Result Page")
+    public void verifyPopularProductIsDisplayed(){
+        Assert.assertTrue(searchResultPage.popularProductsItems());
+    }
 }

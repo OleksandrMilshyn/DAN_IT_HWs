@@ -31,4 +31,9 @@ public class SearchResultPage {
         productPicturesElements.get(productIndex - 1).click();
     }
 
+    public int countOfPopularProducts() {return $$("div.list-item__photo").size();}
+
+    public boolean popularProductsItems() {return $("div.block-popular").shouldBe(visible).isDisplayed();}
+
+    public void clickOnShowMoreButton() {$("button.show-more").click();}
 }
