@@ -1,5 +1,6 @@
 package aqa_hw_12;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class HomePage {
@@ -12,4 +13,10 @@ public class HomePage {
     }
 
     public void enterSearchButton() {$("button.search__btn").click();}
+
+    public void clickOnMainCatalogButton(){$("div.button-menu-main").click();}
+
+    public boolean verifyMainCatalogButtonIsDisplayed() {
+        return $("ul.menu-main__list").shouldBe(visible).isDisplayed();
+    }
 }
