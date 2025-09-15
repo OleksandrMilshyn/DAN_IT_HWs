@@ -1,0 +1,48 @@
+package aqa_hw_12.step_definitions;
+
+import aqa_hw_12.SearchResultPage;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+
+public class SearchResultStepDefinitions extends BaseStepDefinition{
+
+    public SearchResultPage searchResultPage = new SearchResultPage();
+
+    @When("User remember {int} product name on Search Result Page")
+    public void rememberProductName(int productIndex) {
+        String expectedProductName =  searchResultPage.getProductName(productIndex);
+        putValueToMapByKey("expectedProductName", expectedProductName);
+    }
+
+    @When("User clicks on {int} product picture on Search Result Page")
+    public void clickOnProductPicture(int productIndex) {
+        searchResultPage.clickOnProductPicture(productIndex);
+    }
+
+    @When("Use click on Show more button on Search Result Page")
+    public void clickOnShowMoreButton() {searchResultPage.clickOnShowMoreButton();}
+
+    @Then("Title contains {string} search word on Search Result Page")
+    public void verifyTitle(String wordToVerify) {
+        String actualTitle = searchResultPage.getTitle();
+        Assert.assertTrue(actualTitle.contains(wordToVerify));
+    }
+
+    @Then("The title Popular Products contains {string} search word on Search Result Page")
+    public void verifyTitlePopularProducts(String wordToVerify) {
+        String actualTitle = searchResultPage.getTitlePopularProducts();
+        Assert.assertTrue(actualTitle.contains(wordToVerify));
+    }
+
+    @Then("User sees {int} popular products on Search Result Page")
+    public void verifyCountOfPopularProducts(int numberOfProducts) {
+        int actualNumberOfProducts = searchResultPage.countOfPopularProducts(numberOfProducts);
+        Assert.assertEquals(actualNumberOfProducts, numberOfProducts);
+    }
+
+    @Then("Verify that popular products appears on Search Result Page")
+    public void verifyPopularProductIsDisplayed(){
+        Assert.assertTrue(searchResultPage.popularProductsItems());
+    }
+}
