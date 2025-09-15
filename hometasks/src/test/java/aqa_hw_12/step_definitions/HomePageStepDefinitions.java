@@ -30,6 +30,9 @@ public class HomePageStepDefinitions {
         homePage.clickOnMainCatalogButton();
     }
 
+    @When("The user clicks the TV, audio section in the catalog on Home Page")
+    public void clickOnTvAudioSection() {homePage.clickOnTvAudioButton();}
+
     @Then("Verify main catalog menu appears on Home Page")
     public void verifyMainCatalogMenuIsDisplayed() {
         Assert.assertTrue(homePage.verifyMainCatalogButtonIsDisplayed());

@@ -20,9 +20,16 @@ public class SearchResultStepDefinitions extends BaseStepDefinition{
         searchResultPage.clickOnProductPicture(productIndex);
     }
 
-    @Then("title contains {string} search word on Search Result Page")
+    @Then("Title contains {string} search word on Search Result Page")
     public void verifyTitle(String wordToVerify) {
         String actualTitle = searchResultPage.getTitle();
         Assert.assertTrue(actualTitle.contains(wordToVerify));
     }
+
+    @Then("The title Popular Products contains {string} search word on Search Result Page")
+    public void verifyTitlePopularProducts(String wordToVerify) {
+        String actualTitle = searchResultPage.getTitlePopularProducts();
+        Assert.assertTrue(actualTitle.contains(wordToVerify));
+    }
+
 }

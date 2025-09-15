@@ -15,6 +15,10 @@ public class SearchResultPage {
         return $("h1.catalog-title__main").shouldBe(visible, Duration.ofSeconds(10)).getText();
     }
 
+    public String getTitlePopularProducts() {
+        return $("[class='block-popular__header-text']").shouldBe(visible, Duration.ofSeconds(10)).getText();
+    }
+
     public String getProductName(int productIndex) {
         ElementsCollection productNames = $$("div.list-item [class='list-item__title-container m_b-5']")
                 .shouldHave(sizeGreaterThanOrEqual(productIndex - 1));
@@ -26,4 +30,5 @@ public class SearchResultPage {
                 .shouldHave(sizeGreaterThanOrEqual(productIndex - 1));
         productPicturesElements.get(productIndex - 1).click();
     }
+
 }

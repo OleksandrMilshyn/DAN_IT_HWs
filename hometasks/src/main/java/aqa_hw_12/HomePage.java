@@ -21,9 +21,9 @@ public class HomePage {
         executeJavaScript("arguments[0].click();", button);
     }
 
-
-
     public boolean verifyMainCatalogButtonIsDisplayed() {
         return $("ul.menu-main__list").shouldBe(visible).isDisplayed();
     }
+
+    public void clickOnTvAudioButton() {$("[data-id='196']").shouldBe(visible).click();}
 }
