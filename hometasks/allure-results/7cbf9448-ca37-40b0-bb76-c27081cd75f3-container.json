@@ -1,0 +1,1 @@
+{"uuid":"7cbf9448-ca37-40b0-bb76-c27081cd75f3","name":"aqa_hw_11.BaseTest.openSite","children":["6e54a3aa-1fc2-42a8-bc1b-49c4dcf48dc0"],"description":"","befores":[{"name":"openSite","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1757881087685,"stop":1757881087903}],"afters":[],"start":1757881087685,"stop":1757881087903}

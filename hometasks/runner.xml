@@ -3,7 +3,7 @@
 <suite name="All tests" verbose="1" >
     <test name="All tests"   >
         <packages>
-            <package name="aqa_hw_10"/>
+            <package name="aqa_hw_11" />
         </packages>
     </test>
 </suite>
