@@ -52,7 +52,7 @@
       <version>7.11.0</version>
       <scope>test</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
@@ -113,11 +113,4 @@
     </plugins>
   </build>
 
-</project>
-
-      <groupId>com.codeborne</groupId>
-      <artifactId>selenide</artifactId>
-      <version>7.10.0</version>
-    </dependency>
-  </dependencies>
 </project>
